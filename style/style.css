@@ -31,7 +31,7 @@
 
 }
 
-#temporal-legend, #max-text {
+#temporal-legend, #max-text, #mean-text, #min-text {
     font-size: 12px;
 }
 .radio {
@@ -53,4 +53,8 @@
 }
 .leaflet-popup-content p {
     margin: 0.2em 0;
+}
+.leaflet-left, .leaflet-control{
+    margin-left: 10px;
+    height: fit-content;
 }
