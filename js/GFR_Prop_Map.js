@@ -365,11 +365,9 @@ function createSequenceControls(response,map, attributes){
             var container = L.DomUtil.create('div', 'sequence-control-container');
 
             //create range input element (slider)
-            $(container).append('<button class="skip" id="reverse" title="Reverse">Previous</button>');
 
             $(container).append('<input class="range-slider" type="range" value = "3" max = "6">');
             //add skip buttons
-            $(container).append('<button class="skip" id="forward" title="Forward">Next</button');
             //kill any mouse event listeners on the map
             $(container).on('mousedown dblclick', function(e){
                 L.DomEvent.stopPropagation(e);
