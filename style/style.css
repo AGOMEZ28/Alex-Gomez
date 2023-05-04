@@ -36,7 +36,7 @@
 .radio {
     background-color: #F47821;
     color: white;
-    position: absolute;
+    font-size: 13px;
     width: 100px;
     height: 25px;
 }
