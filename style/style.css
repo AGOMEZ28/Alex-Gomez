@@ -31,10 +31,15 @@
 
 }
 
-
+#temporal-legend, #max-text {
+    font-size: 12px;
+}
 .radio {
     background-color: #F47821;
     color: white;
+    position: absolute;
+    width: 100px;
+    height: 25px;
 }
 
 #radio0:checked {
