@@ -80,34 +80,27 @@
 	box-shadow: 2px 2px 4px #999;
 }
 
-/* Darker background on mouse-over */
-.dropdown:hover {
-  background-color:  #BABABD;
-}
-
 .option {
 	font-weight: normal;
 }
 
-
 .infolabel {
-    position: absolute;
-    height: 80px;
-    min-width: 100px;
-    color: #fff;
-    background-color: #000;
-    z-index: 100;
-    border: solid thin #fff;
-    padding: 5px 10px;
-    top: -75px;
+	position: absolute;
+	height: 50px;
+	min-width: 100px;
+	color: #fff;
+	z-index: 100;
+	background-color: #000;
+	border: solid thin #fff;
+	padding: 5px 10px;
+	top: -75px;
 }
 
-
 .infolabel h1 {
-    margin: 0 20px 0 0;
-    padding: 0;
-    display: inline-block;
-    line-height: 1em;
+	margin: 0 20px 0 0;
+	padding: 0;
+	display: inline-block;
+	line-height: 1em;
 }
 .map2 {
 width: 100%;
@@ -115,8 +108,8 @@ height: 100%;
 }
 .slider {
 	position: absolute;
-	top: 975px;
-	left: 24.5%;
+	top: 410px;
+	left: 25%;
 	z-index: 10;
 	font-family: sans-serif;
 	cursor: pointer;
@@ -124,7 +117,6 @@ height: 100%;
 	font-weight: bold;
 	padding: 2px;
 }
-
 
 .btn {
   background-color: #e9e9ed;
@@ -134,14 +126,14 @@ height: 100%;
   cursor: pointer;
   font-size: 20px;
  	position: absolute;
-	top: 60px;
-	left: 2.5%;
+	top: 9%;
+	left: 3%;
 	z-index: 100;
 }
 
 /* Darker background on mouse-over */
 .btn:hover {
-  background-color:  #BABABD;
+  border-color: Yellow;
 }
 
 .legendEntry{

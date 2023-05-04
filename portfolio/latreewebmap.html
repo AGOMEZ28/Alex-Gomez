@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <title>Los Angeles Tree Web Map</title>
+		<link rel="icon" href="../assets/treeicon.png">
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+   integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+   crossorigin=""/>
+<link rel="stylesheet" href = "../style/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/fp_style.css">
+
+
+
+
+    <!-- Load Leaflet from CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" crossorigin=""></script>
+
+    <!-- Load Esri Leaflet from CDN -->
+    <script src="https://unpkg.com/esri-leaflet@3.0.10/dist/esri-leaflet.js"></script>
+    <script src="https://unpkg.com/esri-leaflet-vector@4.0.1/dist/esri-leaflet-vector.js"></script>
+	
+
+    <!-- Load Esri Leaflet Geocoder from CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@3.1.4/dist/esri-leaflet-geocoder.css" crossorigin="" />
+    <script src="https://unpkg.com/esri-leaflet-geocoder@3.1.4/dist/esri-leaflet-geocoder.js" crossorigin=""></script>
+	
+	<!-- Leaflet search plugin -->
+	<script src = "../js/leaflet-search.js"></script>
+	
+	<!-- Leaflet Easy Button library -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+<script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<script src="../js/Leaflet.Control.Custom.js"></script>
+
+
+
+
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+
+
+
+<!-- FONT AWESOME CDN -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<link rel="stylesheet" href="../css/leaflet.zoomhome.css"/>
+<script src="../js/leaflet.zoomhome.min.js"></script>
+
+ <!-- Load Leaflet MarkerCluster and Esri Leaflet Cluster from CDN -->
+    <link rel="stylesheet" type="text/css"
+      href="https://unpkg.com/leaflet.markercluster@1.5.0/dist/MarkerCluster.Default.css"
+      integrity="sha512-6ZCLMiYwTeli2rVh3XAPxy3YoR5fVxGdH/pz+KMCzRY2M65Emgkw00Yqmhh8qLGeYQ3LbVZGdmOX9KUjSKr0TA=="
+      crossorigin="">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.5.0/dist/MarkerCluster.css"
+      integrity="sha512-mQ77VzAakzdpWdgfL/lM1ksNy89uFgibRQANsNneSTMD/bj0Y/8+94XMwYhnbzx8eki2hrbPpDm0vD0CiT2lcg=="
+      crossorigin="">
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.0/dist/leaflet.markercluster.js"
+      integrity="sha512-pWPELjRaw2ZdoT0PDi7iRpRlk1XX3rtnfejJ/HwskyojpHei+9hKpwdphC4yssNt4FM0TjMQOmMrk6ZYSn274w=="
+      crossorigin=""></script>
+    <script src="https://unpkg.com/esri-leaflet-cluster@3.0.1/dist/esri-leaflet-cluster.js"></script>
+
+
+
+   	<script src="../js/leaflet-svg-shape-markers.min.js"></script>
+
+
+
+	<link rel="stylesheet" href="../css/map.css" />
+	<link rel="stylesheet" href="https://agomez28.github.io/Alex-Gomez/style/leaflet-search.css" />
+	
+	
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	
+	
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-default">
+        <!-- Create the navbar -->
+        <div class="container">
+            <div class="navbar">
+                <!-- Creates the navbar header -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-header" aria-expanded="false" aria-controls="navbar-header">
+                    <span class="sr-only">Toggle navigation</span>
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-list" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" /></svg>
+                    <span class="menu"> Menu</span>
+                </button> <!-- Hamburger button for smaller devices -->
+                <h4>Alex Gomez</h4> <!-- Your website brand name -->
+            </div>
+
+            <div id="navbar-header" class="collapse navbar-collapse">
+                <!-- Links to include in navbar -->
+                <ul class="nav navbar-nav">
+                    <!-- Unordered list for links on navbar -->
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../index.html">Portfolio</a></li>
+                    <li><a href="../resume.html">Resume</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div> <!-- end .navbar-collapse -->
+        </div> <!-- end .container -->
+    </nav> <!-- end navigation bar -->
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 portfolio-image">
+    <div class = "header" id = "searchTitle"><p>Los Angeles Tree Web Map</div><input type="image" src = "../assets/help.png" id = "help" /><input type="image" src = "../assets/info.png" id = "info" /></p>
+    <div id="map"></div>
+    <div id="container">
+      <div id="exampleModal" class="reveal-modal">
+        <button id = "closePopup">X</button>
+        <h3>Filter Buttons</h3>
+        <button type="button" class="btn btn-primary" title="Park Filter">Find Trees at Parks</button><button type="button" class="btn btn-primary" title="Street Filter">Find Trees at Streets</button>
+
+        <p>The filter buttons are located on the top-left corner and are used to seach between the Los Angeles park tree database or the Los Angeles street tree database</p>
+        <button type="button" class="btn btn-primary" title="Park Filter">Filter by Park</button><button type="button" class="btn btn-primary" title="Street Filter">Filter by Street</button>        <button type="button" class="btn btn-primary" title="Tree Filter">Filter by Tree</button>
+
+        <p>Another set of filter buttons are displayed to perform a search by street name, park name, or tree name</p>
+        <img src = "../assets/search.png" id = "imagepadding"/><br>
+        A search bar used to type in a search
+        <h3>Basemap Options</h3>
+        <img src = "../assets/basemaps.png" id = "imagepadding" />
+        <p>Explore the various basemaps located on the top-right corner and select the one best suited for your needs</p>
+      
+
+        <h3>Symbology Buttons</h3>
+        <button type="button" class="btn btn-primary">Simple
+          <img src="../assets/simple.png" alt="Simple Button" width = "25" height = "25" padding = "2" />
+          </button>
+          <button type="button" class="btn btn-primary">Tree Height
+            <img src="../assets/height.png" alt="Tree Height Button" width = "25" height = "25"  />
+            </button>
+            <button type="button" class="btn btn-primary">Tree Form
+              <img src="../assets/treeform.png" alt="Tree Form Button" width = "25" height = "25"  />
+              </button>
+              <p></p>
+              <button type="button" class="btn btn-primary">Tree Design
+                <img src="../assets/treewell.png" alt="Tree Design Button" width = "25" height = "25"  />
+                </button>
+                <button type="button" class="btn btn-primary">Tree Type
+                  <img src="../assets/type.png" alt="Tree Type Button" width = "25" height = "25"   />
+                  </button>
+        <p>The symbology buttons are located on the bottom-left corner and are used to change the map symbols based on the properties</p>
+
+        
+        <h3>Legend</h3>
+        <img src = "../assets/legend.png" id = "imagepadding" />
+        <p>The legend is located on the bottom-right corner and updates according to the symbology that is currently active</p>
+
+      
+        <h3>Zoom/Home</h3>
+        <img src = "../assets/zoomhome.png" id = "imagepadding" />
+        <p>The +/- buttons located on the top left are used to zoom in and out of the map</p><br>
+        <p>The home button is used to return to the default map extent</p>
+        <button type="button" class="btn btn-primary" title="Close" id = "closeButton">Close</button>      
+
+      </div>
+      </div>
+
+      <div id="container2">
+        <div id="exampleModal" class="reveal-modal">
+          <button id = "closePopup2">X</button>
+  
+          <h5 id = "infoParagraph">The Los Angeles Tree Web Map is a mapping application created by Alejandro Gomez for the University of Wisconsin-Madison Online GIS Development Master's Program practicum project. This application is used to explore the City of Los Angeles tree database at public parks and public street right-of-way (ROW). The map was produced using Esri Leaflet API in combination with Bootstrap, JQuery, and AJAX.<br><br> All data displayed on the map is from the <a target= 'blank' rel= 'noopener noreferrer' href = "https://geohub.lacity.org/">Los Angeles Geohub </a><br><br>The source code for this project can be found on my <a target= 'blank' rel= 'noopener noreferrer' href = "https://github.com/AGOMEZ28/LATreeWebMap">Github</a><br><br>Visit my <a target= 'blank' rel= 'noopener noreferrer' href = "https://agomez28.github.io/Alex-Gomez-Portfolio/about.html">online portfolio </a>for more of my mapping projects<br><br>Email me <a href="mailto:agomez28@wisc.com">agomez28@wisc.edu</a> if you have any questions or comments</h5>
+          <button type="button" class="btn btn-primary" title="Close" id = "closeButton2">Close</button>      
+
+        </div>
+        </div>
+</div>
+</div>
+</div>
+<script src = "../js/map.js"></script>
+
+</body>
+</html>

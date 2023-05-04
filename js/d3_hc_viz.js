@@ -9,7 +9,9 @@ var currentYear = "2020";
 var attrArray = ["Anti-American Indian or Alaska Native Hate Crime Rate","Anti-Asian Hate Crime Rate","Anti-Black or African American Hate Crime Rate","Anti-Hispanic or Latino Hate Crime Rate","Anti-White Hate Crime Rate","Total Hate Crime Rate"];
 var attrArray2 = ["Anti-American Indian or Alaska Native Hate Crime Rate","Anti-Asian Hate Crime Rate","Anti-Black or African American Hate Crime Rate","Anti-Hispanic or Latino Hate Crime Rate","Anti-White Hate Crime Rate","Total Hate Crime Rate"];
 var attrArray3 = arr3;
-
+//var attrArray3 = ["2020 Anti-American Indian or Alaskan Native Hate Crime Rate","2020 Anti-Asian Hate Crime Rate","2020 Anti-Black or African American Hate Crime Rate","2020 Anti-Hispanic or Latino Hate Crime Rate","2020 Anti-White Hate Crime Rate","2020 Total Hate Crime Rate","2019 Anti-American Indian or Alaskan Native Hate Crime Rate","2019 Anti-Asian Hate Crime Rate","2019 Anti-Black or African American Hate Crime Rate","2019 Anti-Hispanic or Latino Hate Crime Rate","2019 Anti-Native Hawaiian or Pacific Islander Hate Crime Rate","2019 Anti-White Hate Crime Rate","2019 Total Hate Crime Rate"];
+//console.log(attrArray3);
+//console.log(attrArray3);
 //var expressed = year + " " + attrArray[6]; //initial attribute
 attrArray = attrArray.map(i => year + ' ' + i);
 var expressed = attrArray[5]; //initial attribute
@@ -399,7 +401,7 @@ function setChart(csvData, colorScale){
 //Example 1.1 line 1...function to create a dropdown menu for attribute selection
 function createDropdown(csvData,att,map){
     //add select element
-    var dropdown = d3.select(".map2")
+    var dropdown = d3.select("body")
         .append("select")
         .attr("class", "dropdown")
         .on("change", function(){
@@ -619,6 +621,8 @@ function setLabel(props){
         .html(props.NAME);
 };
 
+//function to move info label with mouse
+//Example 2.8 line 1...function to move info label with mouse
 function moveLabel(){
     //get width of label
     var labelWidth = d3.select(".infolabel")
@@ -627,10 +631,10 @@ function moveLabel(){
         .width;
 
     //use coordinates of mousemove event to set label coordinates
-    var x1 = d3.event.clientX + 5,
-        y1 = d3.event.clientY - 20,
-        x2 = d3.event.clientX - labelWidth - 5,
-        y2 = d3.event.clientY + 10;
+    var x1 = d3.event.clientX + 10,
+        y1 = d3.event.clientY - 75,
+        x2 = d3.event.clientX - labelWidth - 10,
+        y2 = d3.event.clientY + 25;
 
     //horizontal label coordinate, testing for overflow
     var x = d3.event.clientX > window.innerWidth - labelWidth - 20 ? x2 : x1; 
@@ -641,6 +645,7 @@ function moveLabel(){
         .style("left", x + "px")
         .style("top", y + "px");
 };
+
 function setLegend(map,colorScale){
     var width =  window.innerWidth * 0.5;
     var legend = map.selectAll('legendEntry')
