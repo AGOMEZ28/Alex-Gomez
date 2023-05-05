@@ -401,7 +401,7 @@ function setChart(csvData, colorScale){
 //Example 1.1 line 1...function to create a dropdown menu for attribute selection
 function createDropdown(csvData,att,map){
     //add select element
-    var dropdown = d3.select("row")
+    var dropdown = d3.select("map")
         .append("select")
         .attr("class", "dropdown")
         .on("change", function(){
@@ -447,7 +447,7 @@ function createSlider(csvData,map){
     .width(300)
     .displayValue(false)
     .on('onchange', (val) => {
-      d3.select('row')
+      d3.select('map')
       .attr("class","value");
       currentYear = String(year);
       year = String(val);
@@ -455,7 +455,7 @@ function createSlider(csvData,map){
       updateDropdown(csvData,map);
     });
 
-  d3.select('row')
+  d3.select('map')
     .append('svg')
     .attr("class","slider")
     .attr('width', 500)
