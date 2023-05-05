@@ -56,3 +56,7 @@
 .leaflet-left, .leaflet-control{
     margin-left: 10px;
 }
+
+.btn {
+    top: 50px;
+}
